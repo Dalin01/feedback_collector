@@ -9,8 +9,9 @@ require(__dirname + '/services/passport-facebook.js');
 
 const app = express();
 
+// cookies is enabled and passport was instructed to manage the authentication.
 app.use(cookieSession({
-  maxAge: 30 * 24 * 60 * 1000,
+  maxAge: 15 * 24 * 60 * 1000, // set 15 days before cookie expires
   keys: [keys.COOKIE_KEY]
 }));
 app.use(passport.initialize());
