@@ -1,9 +1,10 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
-module.exports = function (app) {
+
+module.exports = function(app) {
   app.use(
-    ["/api", "/auth/google"],
+    ["/api", "/auth/google", "/auth/google/callback", "/api/*"],
     createProxyMiddleware({
-      target: "http://localhost:4000",
+      target: 'http://localhost:4000'
     })
   );
 };
