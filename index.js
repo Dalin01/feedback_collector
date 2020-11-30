@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const keys = require(__dirname + '/config/keys.js');
 require(__dirname + '/models/user.js');
 require(__dirname + '/services/passport-google.js');
-require(__dirname + '/services/passport-facebook.js');
+// require(__dirname + '/services/passport-facebook.js');
 
 const app = express();
 
