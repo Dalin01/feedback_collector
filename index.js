@@ -3,12 +3,12 @@ const passport = require('passport');
 const cookieSession = require('cookie-session');
 const mongoose = require('mongoose');
 const keys = require(__dirname + '/config/keys.js');
-require(__dirname + '/models/user.js');
-require(__dirname + '/services/passport-google.js');
-// require(__dirname + '/services/passport-facebook.js');
+require(__dirname + '/models/user');
+require('./services/passport');
 
 const app = express();
 
+// app.use() -> middlewares!
 // cookies is enabled and passport was instructed to manage the authentication.
 app.use(cookieSession({
   maxAge: 15 * 24 * 60 * 1000, // set 15 days before cookie expires
